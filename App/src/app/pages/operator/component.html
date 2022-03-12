@@ -1,0 +1,32 @@
+<app-loader></app-loader>
+<div id="pages-operator" fxLayout="row" fxLayoutAlign="space-between end" class="list-header">
+  <!-- TITLE -->
+  <div fxLayout="row" fxLayoutAlign="start end">
+    <div class="entity-title"><span translate>operator.heading</span></div>
+    <app-info [subject]="'operator'"></app-info>
+
+    <div class="spacer"></div>
+    <div class="entity-count">{{ lineCount }} <span translate>results</span></div>
+  </div>
+
+  <!---->
+  <div fxLayout="row" fxLayoutAlign="end end">
+    <mat-form-field [style.marginBottom]="'-1.25em'">
+      <input type="text" matInput value="" (change)="updateSearchFilter($event)" />
+      <mat-label> <span translate>searchTitleText</span> </mat-label>
+      <mat-placeholder> <span translate>search</span> </mat-placeholder>
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <div class="spacer"></div>
+
+    <button mat-raised-button class="button-background" color="primary" (click)="openEditorDialog()">
+      <mat-icon>add</mat-icon> <span translate>create</span>
+    </button>
+  </div>
+</div>
+
+<app-operator-contact-list
+  (lineCountChange)="onLineCountChange($event)"
+  [updateData]="updateData.asObservable()"
+></app-operator-contact-list>

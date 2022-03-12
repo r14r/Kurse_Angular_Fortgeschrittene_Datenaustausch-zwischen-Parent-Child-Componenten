@@ -1,0 +1,46 @@
+<table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows class="mat-elevation-z8 view-container">
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><span translate>contact.firstName</span></th>
+    <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+  </ng-container>
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><span translate>contact.lastName</span></th>
+    <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+  </ng-container>
+  <ng-container matColumnDef="phoneNumber">
+    <th mat-header-cell *matHeaderCellDef><span translate>contact.phoneNumber</span></th>
+    <td mat-cell *matCellDef="let element">{{ element.phoneNumber }}</td>
+  </ng-container>
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><span translate>contact.email</span></th>
+    <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+  </ng-container>
+
+  <!-- SITES -->
+  <ng-container matColumnDef="sites">
+    <th mat-header-cell *matHeaderCellDef class="width_5_pct" mat-sort-header><mat-icon>room</mat-icon></th>
+    <td mat-cell *matCellDef="let element">
+      <a matTooltip="{{ getTooltip(element.assignedSites ) }}"> {{ element.assignedSites.length }} </a>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef class="width_15_pct"><span translate>tableheader.actions</span></th>
+    <td mat-cell *matCellDef="let element"><app-actions [actions]="getActionList(element)"></app-actions></td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    mat-row
+    *matRowDef="let element; columns: displayedColumns"
+    [class.expanded-row]="expandedElement === element"
+    (click)="rowClicked(element)"
+  ></tr>
+</table>
+
+<mat-paginator
+  [length]="lineCount"
+  [pageSize]="pagesize"
+  [pageSizeOptions]="['5', '10', '25', '50']"
+  class="view-container"
+>
+</mat-paginator>
