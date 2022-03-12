@@ -1,12 +1,38 @@
 {
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/node_modules": true
-    },
-    "explorerExclude.backup": null
+	"editor.formatOnSave": true,
+	"editor.tabSize": 4,
+
+	"prettier.useTabs": true,
+	"prettier.singleQuote": false,
+	"prettier.tabWidth": 4,
+	"prettier.printWidth": 100,
+	"prettier.trailingComma": "all",
+	"prettier.semi": true,
+
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true,
+		"**/node_modules": true,
+		"**/e2e": true,
+		"**/*.spec.ts": true,
+		"src/test.ts": true,
+		"src/polyfills.ts": true,
+		"src/main.ts": true,
+		".browserslistrc": true,
+		"src/favicon.ico": true,
+		"karma.conf.js": true,
+		"tsconfig.app.json": true,
+		"tsconfig.json": true,
+		"tsconfig.spec.json": true,
+		"tslint.json": true,
+		"yarn.lock": true
+	},
+	"workspace.isHidden": true
 }

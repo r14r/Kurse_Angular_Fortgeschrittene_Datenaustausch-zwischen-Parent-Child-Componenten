@@ -1,24 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ParentComponent } from './pages/parent/parent.component';
-import { ChildComponent } from './pages/child/child.component';
-import { EditorComponent } from './pages/editor/editor.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { HomeComponent } from "./pages/home/component";
+import { IntroComponent } from "./pages/intro/component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ParentComponent,
-    ChildComponent,
-    EditorComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent, HomeComponent, IntroComponent],
+	imports: [BrowserModule, AppRoutingModule],
+	providers: [],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
